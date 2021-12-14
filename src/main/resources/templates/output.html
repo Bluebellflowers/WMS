@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>管理员主界面</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入 Bootstrap -->
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="login.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="page-header">
+        <h1>
+          仓库管理系统
+        </h1>
+      </div>
+    </div>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <a href="/" font-size="50px">管理员你好(点击此处可注销)</a>
+    </li>
+  </ul>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="page-header">
+        <h1>
+          <small>选择操作</small>
+        </h1>
+        <div id="login_control">
+          <a class="btn btn-primary" href="/allProduct">库存详情</a>
+          <a class="btn btn-primary" href="/input">入库管理</a>
+          <a class="btn btn-primary" href="/output">出库管理</a>
+          <a class="btn btn-primary" href="showFinancial_information">财务信息</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  <div class="row">-->
+<!--    <div class="col-md-4 column">-->
+<!--      <a class="btn btn-primary" href="/toAddProduct">添加货物</a>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+          <th>货物id</th>
+          <th>名称</th>
+          <th>数量</th>
+          <th>位置</th>
+          <th>收货人信息</th>
+          <th>入库时间</th>
+          <th>入库时间</th>
+          <!--                    <th>操作</th>-->
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Product:${list}">
+          <td  th:text="${Product.id}"></td>
+          <td  th:text="${Product.name}"></td>
+          <td  th:text="${Product.quantity}"></td>
+          <td  th:text="${Product.position}"></td>
+          <td  th:text="${Product.info}"></td>
+          <td  th:text="${Product.intime}"></td>
+          <td  th:text="${Product.outtime}"></td>
+
+          <!--                        <td>-->
+          <!--                            <a  th:href="@{/todeliveryProduct/}+${Product.name}">出库</a>-->
+
+
+          <!--                        </td>-->
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

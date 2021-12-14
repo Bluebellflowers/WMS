@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ProductDao">
+    <!--添加到实时的商品表-->
+    <insert id="addProduct" parameterType="Product">
+        INSERT INTO product(id,quantity,name,info,position,intime,outtime) VALUE (#{id},#{quantity},#{name},#{info},#{position},#{intime},#{outtime})
+    </insert>
+    <!--添加到入库商品表-->
+    <insert id="add_inputProduct" parameterType="Product">
+        INSERT INTO input_product(id,quantity,name,info,position,intime) VALUE (#{id},#{quantity},#{name},#{info},#{position},#{intime})
+    </insert>
+    <!--添加到出库商品表-->
+    <insert id="add_outputProduct" parameterType="Product">
+        INSERT INTO output_product(id,quantity,name,info,position,intime,outtime) VALUE (#{id},#{quantity},#{name},#{info},#{position},#{intime},#{outtime})
+    </insert>
+
+    <delete id="deleteProductById" parameterType="String">
+        DELETE FROM Product WHERE id=#{id}
+    </delete>
+
+    <update id="updateProduct" parameterType="Product">
+        UPDATE product
+        SET id = #{id},quantity=#{quantity},name=#{name},info=#{info},position=#{position},intime=#{intime}
+        WHERE id = #{id}
+    </update>
+
+    <update id="deliveryProduct" parameterType="Product">
+        UPDATE product
+        SET quantity=#{quantity}
+        WHERE id = #{id}
+    </update>
+
+    <select id="queryProductById" resultType="Product" parameterType="String">
+        SELECT *
+        FROM product
+        WHERE id=#{id}
+    </select>
+
+    <select id="queryoutProductById" resultType="Product" parameterType="String">
+        SELECT *
+        FROM output_product
+        WHERE id=#{id}
+    </select>
+    <!--查询product表-->
+    <select id="queryAllProduct" resultType="Product">
+        SELECT *
+        FROM product
+    </select>
+    <!--查询input_product表-->
+    <select id="queryAllinputProduct" resultType="Product">
+        SELECT *
+        FROM input_product
+    </select>
+
+    <!--查询output_product表-->
+    <select id="queryAlloutputProduct" resultType="Product">
+        SELECT *
+        FROM output_product
+    </select>
+
+    <select id="getByname" parameterType="String" resultType="Product">
+        select *
+        FROM
+        Product where name=#{name}
+    </select>
+
+
+</mapper>

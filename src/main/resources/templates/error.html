@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/community.css">
+<link rel="stylesheet" type="text/css" href="login.css"/>
+<script src="js/bootstrap.min.js" type="application/javascript"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>错误页面</title>
+</head>
+<body>
+<!--注册错误，注册的用户名 或 密码不能为空-->
+<div th:if="${btn_regiest != null && error_btn_login == null }">
+    <p>注册的用户名 或 密码不能为空！</p>
+
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <a href="/" font-size="50px">返回主界面</a>
+        </li>
+    </ul>
+
+</div>
+
+<!--登录错误-->
+<div th:if="${error_btn_login != null}">
+    <p>账号和密码错了</p>
+
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <a href="/" font-size="50px">返回主界面</a>
+        </li>
+    </ul>
+
+</div>
+
+<!--注册错误，已经被注册过了-->
+<div th:if="${CunZai == 1}">
+    <p>你注册的ID：<span th:text="${regiest_username}"></span>已经被注册过了，请重新注册</p>
+
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <a href="/" font-size="50px">返回主界面</a>
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>
+
+
+<tr th:each="lists:${list}">
+    <td  align="center" th:text="${lists.id}"></td>
+    <td  align="center" th:text="${lists.name}"></td>
+</tr>

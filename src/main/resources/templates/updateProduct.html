@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>修改货物信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="login.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                    仓库管理系统
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                    <small>修改货物信息</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+
+    <form action="" name="userForm">
+        <input type="hidden" th:name="id" th:value="${Product.id}"/>
+        数量：<input type="text" th:name="quantity"  th:value="${Product.quantity}"/>
+        名称：<input type="text" th:name="name"  th:value="${Product.name}"/>
+        收货人信息：<input type="text" th:name="info"  th:value="${Product.info}"/>
+        位置：<input type="text" th:name="position"  th:value="${Product.position}"/>
+        入库时间：<input type="text" th:name="intime"  th:value="${Product.intime}"/>
+
+        <input type="button" value="提交" onclick="updateProduct()"/>
+    </form>
+    <script type="text/javascript">
+        function updateProduct() {
+            var form = document.forms[0];
+            form.action = "/updateProduct";
+            form.method = "post";
+            form.submit();
+        }
+    </script>
+</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>订单费用详细信息</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入 Bootstrap -->
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="login.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="page-header">
+        <h1>
+          仓库管理系统
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="page-header">
+        <h1>
+          <small>订单费用详细信息</small>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+
+  <form action="" name="userForm">
+    单号id:<input type="text" th:name="id" th:value="${Financial_information.id}"/>
+    货物id：<input type="text" th:name="quantity"  th:value="${Financial_information.productID}"/>
+    货物名称：<input type="text" th:name="name"  th:value="${Financial_information.name}"/>
+    入库时间：<input type="text" th:name="name"  th:value="${Product.intime}"/>
+    出库时间：<input type="text" th:name="name"  th:value="${Product.outtime}"/>
+    储存时间：<input type="text" th:name="info"  th:value="${Financial_information.time}"/>
+    订单金额：<input type="text" th:name="position"  th:value="${Financial_information.money}"/>
+    <input type="button" value="返回" onclick="back()"/>
+
+    <p>订单金额计算方式说明如下,如有异议请联系我们</p>
+    <p>计算公式如下：订单金额=储存分钟数*货物数量*每分钟费用+固定费用</p>
+    <p>每分钟费用取0.01元每分钟</p>
+    <p>固定费用取300元</p>
+  </form>
+  <script type="text/javascript">
+    function back() {
+      var form = document.forms[0];
+      form.action = "/tofinancial_information";
+      form.method = "post";
+      form.submit();
+    }
+  </script>
+</div>

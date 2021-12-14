@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>管理员主界面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="login.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                   仓库管理系统
+                </h1>
+            </div>
+        </div>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/" font-size="50px">管理员你好(点击此处可注销)</a>
+        </li>
+    </ul>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                    <small>选择操作</small>
+                </h1>
+                <div id="login_control">
+                    <a class="btn btn-primary" href="/allProduct">库存详情</a>
+                    <a class="btn btn-primary" href="/input">入库管理</a>
+                    <a class="btn btn-primary" href="/output">出库管理</a>
+                    <a class="btn btn-primary" href="/showFinancial_information">财务信息</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+<!--        <div class="col-md-4 column">-->
+<!--            <a class="btn btn-primary" href="/toAddHomework">发布作业</a>-->
+<!--        </div>-->
+<!--        -->
+        <form th:action="@{/queryEmp}" method="post" style="float: right" class="form-inline">
+            <input type="text" name="name" class="form-control"  placeholder="请输入货物名称">
+            <input type="submit" value="查询" class="btn btn-primary">
+        </form>
+
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>货物id</th>
+                    <th>名称</th>
+                    <th>数量</th>
+                    <th>位置</th>
+                    <th>操作</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="list:${list}">
+                    <td  th:text="${list.id}"></td>
+                    <td  th:text="${list.name}"></td>
+                    <td  th:text="${list.quantity}"></td>
+                    <td  th:text="${list.position}"></td>
+
+                    <td>
+                        <a  th:href="@{/toUpdateProduct(id=${list.id})}">更改货物信息</a>|
+                        <a  onclick="return del()" th:href="@{/deleteProduct/}+${list.id}">出库</a>
+
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <script type="text/javascript">
+                function del() {
+                    var msg = "您真的确定要出库吗？\n\n请确认！";
+                    if (confirm(msg)==true){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
+
+            </script>
+
+        </div>
+    </div>
+</div>
+
+
+
