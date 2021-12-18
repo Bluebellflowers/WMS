@@ -6,6 +6,30 @@
   <!-- 引入 Bootstrap -->
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="login.css"/>
+
+<style>
+/*#forget_pwd:hover{*/
+/*	   */
+/*		color: #38D39B;*/
+/*	}*/
+/*	body{*/
+/*    background-image:url("images/4.jpeg");*/
+/*    background-size: 100%;*/
+/*    background-repeat: no-repeat;*/
+/*    }*/
+
+	
+.login-box
+	{width:510px;margin:20px auto 0 auto;text-align:center;padding:15px;background:url(images/mask.png);border-radius:10px;}	
+.screenbg{position:fixed;bottom:0;left:0;z-index:-999;overflow:hidden;width:100%;height:100%;min-height:100%;}
+.screenbg ul li{display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}
+.screenbg ul a{left:0;top:0;width:100%;height:100%;display:inline-block;margin:0;padding:0;cursor:default;}
+.screenbg a img{vertical-align:middle;display:inline;border:none;display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}	
+	
+	
+	
+	
+</style>	
 </head>
 <body>
 <div class="container">
@@ -28,22 +52,32 @@
       </div>
     </div>
   </div>
-
-
   <form action="" name="userForm">
-    单号id:<input type="text" th:name="id" th:value="${Financial_information.id}"/>
-    货物id：<input type="text" th:name="quantity"  th:value="${Financial_information.productID}"/>
-    货物名称：<input type="text" th:name="name"  th:value="${Financial_information.name}"/>
-    入库时间：<input type="text" th:name="name"  th:value="${Product.intime}"/>
-    出库时间：<input type="text" th:name="name"  th:value="${Product.outtime}"/>
-    储存时间：<input type="text" th:name="info"  th:value="${Financial_information.time}"/>
-    订单金额：<input type="text" th:name="position"  th:value="${Financial_information.money}"/>
+    <div class="login-box">
+    <p style="font-size: 18px;text-align: center;padding-left: 20px;font-family:'黑体';">单 号id：
+      <input type="text" th:name="id" th:value="${Financial_information.id}"/>
+    </p>
+     <p style="font-size: 18px;text-align: center;padding-left: 20px;font-family:'黑体';">货 物id：
+       <input type="text" th:name="quantity"  th:value="${Financial_information.productID}"/>
+    </p>
+     <p style="font-size: 18px;text-align: center;padding-left: 20px;font-family:'黑体';">货物名称：<input type="text" th:name="name"  th:value="${Financial_information.name}"/>
+    </p>
+     <p style="font-size: 18px;text-align: center;padding-left: 20px;font-family:'黑体';">入库时间：<input type="text" th:name="name"  th:value="${Product.intime}"/>
+    </p>
+     <p style="font-size: 18px;text-align: center;padding-left: 20px;font-family:'黑体';">出库时间：<input type="text" th:name="name"  th:value="${Product.outtime}"/>
+    </p>
+     <p style="font-size: 18px;text-align: center;padding-left: 20px;font-family:'黑体';">储存时间：<input type="text" th:name="info"  th:value="${Financial_information.time}"/>
+    </p>
+     <p style="font-size: 18px;text-align: center;padding-left: 20px;font-family:'黑体';">订单金额：<input type="text" th:name="position"  th:value="${Financial_information.money}"/>
+    </p>
     <input type="button" value="返回" onclick="back()"/>
+	  </div>
 
-    <p>订单金额计算方式说明如下,如有异议请联系我们</p>
-    <p>计算公式如下：订单金额=储存分钟数*货物数量*每分钟费用+固定费用</p>
-    <p>每分钟费用取0.01元每分钟</p>
-    <p>固定费用取300元</p>
+    <p>&nbsp;</p>
+    <p style="font-size: 15px;text-align: center;padding-left: 20px;font-family:'黑体';">订单金额计算方式说明如下,如有异议请联系我们</p>
+    <p style="font-size: 15px;text-align: center;padding-left: 20px;font-family:'黑体';">计算公式如下：订单金额=储存分钟数*货物数量*每分钟费用+固定费用</p>
+    <p style="font-size: 15px;text-align: center;padding-left: 20px;font-family:'黑体';">每分钟费用取0.01元每分钟</p>
+    <p style="font-size: 15px;text-align: center;padding-left: 20px;font-family:'黑体';">固定费用取300元</p>
   </form>
   <script type="text/javascript">
     function back() {

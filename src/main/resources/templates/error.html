@@ -2,20 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/community.css">
 <link rel="stylesheet" type="text/css" href="login.css"/>
 <script src="js/bootstrap.min.js" type="application/javascript"></script>
 <head>
     <meta charset="UTF-8">
     <title>错误页面</title>
+    <style type="text/css">
+      html{overflow-y:scroll;vertical-align:baseline;}
+      body{font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;
+		  color:#fff;font-weight:bold;height:100%;line-height:1;background:#000000}
+	  .or {color:black;font-size:20px;width:500px;height:200px;margin:180px auto 0 auto;
+		   text-align:center;padding:80px;background:url(images/2.JPG);border-radius:10px;}
+	   .one{color:black;font-size:20px;width:320px;margin:10px auto 0 auto;
+		   text-align:center;}
+	  .and{color:black;font-size:20px;width:500px; height:200px;margin:180px auto 0 auto;
+		   text-align:center;padding:80px;background:url(images/2.jpg);border-radius:10px;}
+	   .two{color:black;font-size:20px;width:320px;margin:10px auto 0 auto;
+		   text-align:center;}
+	  .done {color:black;font-size:20px;width:600px;height:200px;margin:180px auto 0 auto;
+		   text-align:center;padding:80px;background:url(images/2.JPG);border-radius:10px;}
+		.three{color:black;font-size:20px;width:440px;margin:10px auto 0 auto;
+		   text-align:center;}
+	  ul,li{list-style:}
+      .screenbg{position:fixed;bottom:0;left:0;z-index:-999;overflow:hidden;width:100%;height:100%;min-height:100%;}
+      .screenbg  li{display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}
+      .screenbg  a{left:0;top:0;width:100%;height:100%;display:inline-block;margin:0;padding:0;cursor:default;}
+      .screenbg a img{vertical-align:middle;display:inline;border:none;display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}
+	     	   
+	</style>
 </head>
 <body>
 <!--注册错误，注册的用户名 或 密码不能为空-->
-<div th:if="${btn_regiest != null && error_btn_login == null }">
+<div class="or" th:if="${btn_regiest != null && error_btn_login == null }">
     <p>注册的用户名 或 密码不能为空！</p>
 
     <ul class="nav navbar-nav navbar-left">
-        <li>
+        <li class="one">
             <a href="/" font-size="50px">返回主界面</a>
         </li>
     </ul>
@@ -23,11 +47,11 @@
 </div>
 
 <!--登录错误-->
-<div th:if="${error_btn_login != null}">
-    <p>账号和密码错了</p>
+<div class="and" th:if="${error_btn_login != null}">
+    <p class="2">账号和密码错了</p>
 
     <ul class="nav navbar-nav navbar-left">
-        <li>
+        <li class="two">
             <a href="/" font-size="50px">返回主界面</a>
         </li>
     </ul>
@@ -35,15 +59,18 @@
 </div>
 
 <!--注册错误，已经被注册过了-->
-<div th:if="${CunZai == 1}">
-    <p>你注册的ID：<span th:text="${regiest_username}"></span>已经被注册过了，请重新注册</p>
+<div class="done" th:if="${CunZai == 1}">
+    <p class="3">你注册的ID：<span th:text="${regiest_username}"></span>已经被注册过了，请重新注册</p>
 
     <ul class="nav navbar-nav navbar-left">
-        <li>
+        <li class="three">
             <a href="/" font-size="50px">返回主界面</a>
         </li>
     </ul>
 
+</div>
+<div class="screenbg">
+		<li><a href="javascript:;"><img src="images/2.jpg"></a></li>
 </div>
 </body>
 </html>

@@ -1,101 +1,250 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>管理员主界面</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 引入 Bootstrap -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="login.css"/>
-</head>
-<body>
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="page-header">
-                <h1>
-                   仓库管理系统
-                </h1>
-            </div>
-        </div>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            <a href="/" font-size="50px">管理员你好(点击此处可注销)</a>
-        </li>
-    </ul>
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="page-header">
-                <h1>
-                    <small>选择操作</small>
-                </h1>
-                <div id="login_control">
-                    <a class="btn btn-primary" href="/allProduct">库存详情</a>
-                    <a class="btn btn-primary" href="/input">入库管理</a>
-                    <a class="btn btn-primary" href="/output">出库管理</a>
-                    <a class="btn btn-primary" href="/showFinancial_information">财务信息</a>
+<!doctype html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport"
+              content = "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+        <title>仓库管理系统-库存详情</title>
+
+        <style>
+            /*兼容浏览器*/
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .content {
+                width: 100%;
+                height: 100%;
+            }
+
+            .content-left {
+                width: 19%;
+                height: 100%;
+                background-color: #1c232f;
+                float: left;
+				position:fixed;
+				left:0;
+				top:5px;
+				bottom: 0px;
+            }
+
+            .content-right {
+                height: 600px;
+                background-color: #6495ED;
+                float: left;
+            }
+
+
+            /*分割线*/
+            .seg {
+                height: 1px;
+                width: 100%;
+                background-color: black;
+            }
+
+            .nav {
+                /*上下5,左右0*/
+                margin: 5px 0;
+            }
+
+            /*菜单项主标题*/
+            .nav-title {
+	height: 40px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+	text-decoration: none;
+            }
+
+            /*内容区*/
+            .content-right{
+                font-size: 50px;
+                line-height: 600px;
+                text-align: center;
+				width: 81%;
+            }
+			
+			/*取消超链接下划线*/
+			.nav-title > a:link {text-decoration: none;color: white }
+			.nav-title > a:active {text-decoration: none;color: white }
+			/*访问后字 的颜色不变*/
+			.nav-title > a:visited {text-decoration: none;color: white; }
+			/*菜单项 鼠标 经过时 字 的改变颜色*/
+			.nav-title > a:hover {text-decoration: none;color: #1c232f; }
+			
+			.nav-menu:hover{background-color: aliceblue}
+			/*表格样式*/
+			table{
+				width:81%;
+				border:2px solid #A6A6A6;
+				border-collapse:collapse;
+			}
+			tr{
+				height: auto;
+				border-bottom:2px solid #e9e9e9;
+				font-size: 16px;
+			}
+			th{
+				color:#191919;
+			}
+			td{
+				text-align: center;
+			}
+			.caozuo{
+				color:#158eee;
+				cursor:pointer;
+			}
+			table tr:nth-of-type(2n){
+				background:#e5e5e5;
+			}
+			/*相对窗口固定*/
+			.youguding{
+				position: fixed;
+				right:0;
+				top:5px;
+			}
+
+			
+        </style>
+
+        <script src = "https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity = "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin = "anonymous"></script>
+    </head>
+    
+    
+       
+
+    
+    <body style="">
+        <div class = "content">
+            <!--左侧导航栏-->
+            <div class = "content-left">
+<!--水平线-->
+              <div class = "seg"></div>
+
+                <!--菜单栏导航-->
+                <div class = "nav">
+                    <!--菜单栏项1-->
+                    <div class = "nav-menu">
+                        <!--主标题-->
+                    	<div class = "nav-title"><a href="/allProduct"><span style="">库存详情</span></a></div>
+                    </div>
+
+                    <!--菜单栏项2-->
+					  <div class = "nav-menu">
+							<!--主标题-->
+							<div class = "nav-title"> <a href="/input">入库管理</a></div>
+					  </div>
+
+						<!--菜单栏项3-->
+					  <div class = "nav-menu">
+							<!--主标题-->
+							<div class = "nav-title"><a href="/output">出库管理</a></div>
+					  </div>
+					   <!--菜单栏项4-->
+					  <div class = "nav-menu">
+							<!--主标题-->
+							<div class = "nav-title"> <a href="/showFinancial_information">财务信息</a></div>
+					  </div>
+                    
                 </div>
-            </div>
+
+                <!--水平线-->
+                <div class = "seg"></div>
+				</div>
+          </div>
+
+            
+        <!--右侧内容区-->
+        <div class ="conten-right">
+			<!--固定-->
+			<div class="youguding" style="width:81%">
+            <!--标题-->
+            <div class="container" style="width: 100%">
+					<div class="row clearfix">
+						<div class="col-md-12 column">
+							<div class="page-header" style="background-color:#2B3648;float: left;width: 100%">
+								<h1 style="color: #E6DFDF">
+								   仓库管理系统
+								</h1>
+							</div>
+						</div>
+					</div>  
+				</div>
+           	
+            <!--注销超链接-->
+            <ul class="nav navbar-nav navbar-right" >
+				<li class="wenhao" style="float: right; width: 100%;background-color: #CDCCCC">
+						<a href="/" font-size="50px" style="float: right;">管理员你好(点击此处可注销)</a>
+				</li>
+			</ul>
+           
+            <!--分界线-->
+            <div class="row clearfix"> 
+				<p style="float: right; width:100%;background-color: #CDCCCC ">&nbsp;</p>
+			</div>
+            
+            <!--查询栏-->
+			<div class="row">
+				<form th:action="@{/queryEmp}" method="post" style="float: right; width: 100%;background-color: #CDCCCC;" class="form-inline">
+					<input type="submit" style="float:right;" value="查询" class="btn btn-primary">
+					<input type="text" style="float:right;"  name="name" class="form-control"  placeholder="请输入货物名称">
+				</form>
+			</div>
+				</div>
+			<!--分界线-->
+			<div class="row clearfix">
+			<!--货物表-->
+			<div class="col-md-12 column">
+				<table class="table table-hover table-striped" style="width:81%;margin-top: 120px; float: right">
+					<thead>
+					<tr style="background-color: #6E6E6E">
+						<th>货物id</th>
+						<th>名称</th>
+						<th>数量</th>
+						<th>位置</th>
+						<th>操作</th>
+
+					</tr>
+					</thead>
+					<tbody>
+					<tr th:each="list:${list}">
+						<td  th:text="${list.id}"></td>
+						<td  th:text="${list.name}"></td>
+						<td  th:text="${list.quantity}"></td>
+						<td  th:text="${list.position}"></td>
+
+						<td class="caozuo">
+							<a  th:href="@{/toUpdateProduct(id=${list.id})}">更改货物信息</a>|
+							<a  onclick="return del()" th:href="@{/deleteProduct/}+${list.id}">出库</a>
+
+
+						</td>
+					</tr>
+					</tbody>
+				</table>
+
+	<!--弹窗-->
+				<script type="text/javascript">
+					function del() {
+						var msg = "您真的确定要出库吗？\n\n请确认！";
+						if (confirm(msg)==true){
+							return true;
+						}else{
+							return false;
+						}
+					}
+
+				</script>
+
         </div>
-    </div>
-    <div class="row">
-
-<!--        <div class="col-md-4 column">-->
-<!--            <a class="btn btn-primary" href="/toAddHomework">发布作业</a>-->
-<!--        </div>-->
-<!--        -->
-        <form th:action="@{/queryEmp}" method="post" style="float: right" class="form-inline">
-            <input type="text" name="name" class="form-control"  placeholder="请输入货物名称">
-            <input type="submit" value="查询" class="btn btn-primary">
-        </form>
-
-    </div>
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <table class="table table-hover table-striped">
-                <thead>
-                <tr>
-                    <th>货物id</th>
-                    <th>名称</th>
-                    <th>数量</th>
-                    <th>位置</th>
-                    <th>操作</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="list:${list}">
-                    <td  th:text="${list.id}"></td>
-                    <td  th:text="${list.name}"></td>
-                    <td  th:text="${list.quantity}"></td>
-                    <td  th:text="${list.position}"></td>
-
-                    <td>
-                        <a  th:href="@{/toUpdateProduct(id=${list.id})}">更改货物信息</a>|
-                        <a  onclick="return del()" th:href="@{/deleteProduct/}+${list.id}">出库</a>
-
-
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-
-            <script type="text/javascript">
-                function del() {
-                    var msg = "您真的确定要出库吗？\n\n请确认！";
-                    if (confirm(msg)==true){
-                        return true;
-                    }else{
-                        return false;
-                    }
-                }
-
-            </script>
-
-        </div>
-    </div>
-</div>
-
-
+			</div>
+		</div>
+    </body>
+</html>
 

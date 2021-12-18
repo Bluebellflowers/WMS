@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
 
-    <link rel="stylesheet" type="text/css" href="login.css"/>
+<!--    <link rel="stylesheet" type="text/css" href="login.css"/>-->
     <script type="text/javascript"></script>
+<style>
+#forget_pwd:hover{
+
+		color: #38D39B;
+	}
+	body{
+    background-image:url("images/3.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    }
+	#forget_pwd {
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-family:"黑体";
+    top: 70px;
+    text-align: center;
+    }
+	#forget_pwd:hover {
+    color: #46C480;
+	text-decoration: none;	
+	}
+#login_frame {
+    width: 400px;
+    height: 260px;
+    padding: 13px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+
+    background-color: rgba(0,0,0,.1);
+
+    border-radius: 10px;
+    text-align: center;
+}
+</style>
+
 </head>
 
 <body>
-<h1 align="center">仓库管理系统</h1>
+<p style="font-size: 60px;text-align: center;padding-left: 30px;font-family:'黑体';">仓库管理系统</p>
 <div id="login_frame">
     <form method="post" >
-        <a id="forget_pwd" font-size="50px">登录选择：</a><br><br>
+       
         <div id="login_control" align="center">
             <a id="forget_pwd"href="/login.html" >管理员登录</a><br><br>
 

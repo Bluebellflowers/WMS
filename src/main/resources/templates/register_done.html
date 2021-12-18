@@ -4,23 +4,42 @@
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/community.css">
 <script src="js/bootstrap.min.js" type="application/javascript"></script>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <title>注册成功</title>
+     <style type="text/css">
+      html{overflow-y:scroll;vertical-align:baseline;}
+       body{font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;
+		  color:#fff;height:100%;line-height:1;background:#888}
+	  .Load{font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;
+		   font-size:20px;width:400px;height: 150px; margin:160px auto 0 auto;
+		   text-align:center;padding:40px;background:url(images/mask.png);border-radius:10px;}
+	  .name {font-size:20px;color:white;width:400px;height:50px;line-height:50px;margin:0px auto 0 auto;}
+	  .password {font-size:20px;color:white;width:400px;height:30px;line-height: 30px;margin:30px auto 0 auto;}
+	  .load {font-size:18px;color: white;width:400px;height:20px;line-height:20px;margin:30px auto 0 auto;}
+	  .screenbg{position:fixed;bottom:0;left:0;z-index:-999;overflow:hidden;width:100%;height:100%;min-height:100%;}s
+      .screenbg  li{display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}
+      .screenbg  a{left:0;top:0;width:100%;height:100%;display:inline-block;margin:0;padding:0;cursor:default;}
+      .screenbg a img{vertical-align:middle;display:inline;border:none;display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}   	   
+	</style>
 
     <link rel="stylesheet" type="text/css" href="login.css"/>
     <script type="text/javascript"></script>
 </head>
 
 <body>
-<div id="login_frame">
+<div class="Load" id="login_frame">
     <form method="post">
         <form align="center">
-            <div>你注册的用户名为：<span th:text="${regiest_username}"></span><br></div>
-            <div>你注册的密码为：<span th:text="${regiest_password}"></span></div>
-            <div><a href="/">去登录吧</a></div>
+			<div class="name"><strong>你注册的用户名为：</strong><span th:text="${regiest_username}"></span><br></div>
+            <div class="password"><strong>你注册的密码为：</strong><span th:text="${regiest_password}"></span></div>
+            <div class="load"><a href="/" style="text-decoration: none"><strong>去登录吧</strong></a></div>
         </form>
     </form>
+</div>
+<div class="screenbg">
+  <li><a href="javascript:;"><img src="images/25.png"></a></li>
 </div>
 </body>
 </html>
