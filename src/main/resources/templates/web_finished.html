@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+	margin:0 auto;
+	padding: 0;
+}
+.nav{
+	width:100%;
+	height: 133px;
+	font-family: "micrsoft yahei";
+	margin: 0 auto;
+}
+.nav li{
+	list-style: none;
+	float: left;
+	width: 107px;
+	height: 100%;
+	line-height: 133px;
+	text-align: center;
+	font-size: 18px;
+	color: #333333;
+	margin-left: 20px;
+} 
+.nav .logo{
+	width: 50%;
+	height: 100%;
+	font-size: 55px;
+	color: #0c53ad;
+
+	
+}
+.nav li:hover{
+	background-color: #1040a8;
+	color: #ffffff;
+	cursor: pointer;
+
+	
+}
+.nav .xuanzhong{
+	background-color: #1040a8;
+	color: #ffffff;
+}
+.banner{
+	width: 100%;
+	height: 508px;
+	margin: 0 auto;
+}
+.banner img{
+	margin: 0 auto;
+}
+.aboutus{
+	width: 1162px;
+	height: 445px;
+	margin: 0 auto;
+	border-bottom: 6px solid #1566c1;
+	padding-top: 50px;
+	position: relative;
+}
+.tittle{
+	width: 631px;
+	text-align: center;
+	font-size: 32px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	margin: 0 auto;
+	/*
+	background-image: url("../img/line.png");
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	*/
+	background: url("./images/img/line.png") no-repeat 0 50%;
+}
+.aboutus img{
+	width: 362px;
+	height: 343px;
+	position: absolute;
+	bottom: 0;
+}
+.jieshao{
+	width: 180px;
+	height: 80px;
+	color:#ffffff;
+	font-size: 30px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	background-color:#1566c1 ;
+	text-align: center;
+	line-height: 80px;
+	position: absolute;
+	left:362px;
+	bottom: 228px;
+	z-index: 99;
+
+}
+.neirong{
+	width: 665px;
+	height: 195px;
+	background-color: #f5f5f5;
+	position: absolute;
+	left: 362px;
+	bottom: 0;
+	z-index: 1;
+	/*
+	padding-top: 78px;
+	padding-left: 41px;
+	padding-right: 94px;
+	*/
+	padding: 78px  94px 0 41px;
+}
+.neirong p{ 
+	font-size: 18px;
+	line-height: 36px;
+	color: #333333;
+	font-family:  "华文宋体";
+}
+.more{
+	width: 78px;
+	height: 33px;
+	text-align: center;
+	line-height: 33px;
+	color: #ffffff;
+	background-color: #e6c50e;
+	position: absolute;
+	right: 12px;
+	bottom: 28px;
+	z-index: 2;
+	font-family:"Arial" ;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+}
+.show{
+	width: 100%;
+	height: 529px;
+	margin: 74px auto 0;
+	background-image: url("./images/img/产品背景.png");
+	padding-top: 37px;
+	
+}
+.chanpinphoto{
+	width: 1136px;
+	height: 333px;
+	margin: 73px auto 0;
+}
+.chanpinphoto img{
+	float: left;
+	margin-left: 20px;
+	cursor: pointer;
+}
+.chaxun{
+	width: 150px;
+	height: 50px;
+	margin: 21px auto 0;
+	font-size: 20px;
+	color: #ffffff;
+	font-family: "微软雅黑";
+	border: 3px solid #ffffff;
+	text-align: center;
+	line-height: 48px;
+	cursor:pointer;
+	
+}
+.news{
+	width:100%;
+	margin: 63px auto 0;
+	height: 568px;
+	
+}
+.newsbox{
+	width: 1163px;
+	margin: 0 auto;
+}
+.littlebox{
+	width: 572px;
+	height: 242px;
+	float: left;
+	margin-top: 30px;
+	
+	
+}
+.littlebox .left{
+	background-color: #f5f5f5;
+	float:left;
+	width: 531px;
+	height: 242px;
+}
+
+.littlebox .left img{
+	margin: 16px 0 0 14px;
+}
+
+.littlebox .left p{
+	display: inline-block;
+	width: 256px;
+	float:right;
+	margin-right: 18px;
+	font-size: 20px;
+	font-family: "微软雅黑";
+
+	
+}
+
+.littlebox .left p span{
+	display: block;
+	font-family:"宋体";
+	font-size: 16px;
+	line-height: 30px;
+	margin-top: 7px;
+}
+.right{
+	float:right;
+	width: 27px;
+	height: 54px;
+	color: #ffffff;
+	background-color: #1566c1;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: "微软雅黑";
+	font-size: 36px;
+	line-height: 54px;
+}
+.anlibox{
+	width: 100%;
+	height: 626px;
+	margin:53px  auto 0;
+	background: #f5f5f5;
+	padding-top: 31px;
+}
+.photobox{
+	width: 1149px;
+	height: 486px;
+	margin: 35px auto 0;
+	
+}
+.photobox li{
+	width: 287px;
+	height: 242px;
+	list-style: none;
+	/*溢出隐藏*/
+	overflow: hidden;
+	float:left;
+}
+.callme{
+	width: 100%;
+	height: 424px;
+	padding-top: 36px;
+}
+.callmebox{
+	width: 1020px;
+	height: 314px;
+	margin: 22px auto 0;
+	background-color: #f5f5f5
+}
+.callmebox div{
+	width: 33%;
+	height: 100%;
+	float:left;
+}
+.callmebox div img{
+	display: block;
+	margin: 54px auto 0;
+}
+.callmebox div p{
+	font-size: 30px;
+	font-family:"Arial";
+	color: #999999;
+	text-align: center;
+	margin: 20px 0 12px;
+		
+}
+.callmebox div span{
+	display: block;
+	font-size: 20px;
+	color: #333333;
+	margin: 0 auto;
+	text-align: center;
+
+}
+.bottom{
+	width: 100%;
+	height: 176px;
+	background-color: #1566c1;
+	padding: 72px;
+	
+}
+.bottom p{
+	
+	height: 100%;
+	font-size: 42px;
+	font-family: "微软雅黑";
+	color: #d3ddef;
+	line-height: 176px;
+	text-align: center;
+	margin-right: 184px;
+	float: left;
+	margin-top: 0;
+	margin-left: 270px;
+	
+}
+	.bottom span{
+	height: 100%;
+	font-size: 20px;
+	color: #d3ddef;
+	line-height: 176px;
+	text-align: center;
+	
+}
+.nev>a:link { color:#000000; text-decoration: none}
+.nev>a:active { color:#000000; text-decoration: none}	
+.nev>a:visited { color:#000000; text-decoration: none}
+.nev>a:hover { color:white; text-decoration: none}
+	/*菲菲加的CSS*/
+	.right a{
+		text-decoration: none;
+	}
+	.right a:link{
+		color: #FFFFFF;
+	}
+	.right a:visted{
+		color: #7D7D7D;
+	}
+	.right a:hover{
+		color: #FF0004;
+	}
+	.right a:active{
+		color: #00FFD0;
+	}
+	/*finish*/
+</style>
+<meta charset="utf-8">
+
+<title>商业网站</title>
+</head>
+
+<body>
+<!-------------------导航部分---------------->
+<ul class="nav">
+
+
+
+<li class="nev"><a href="#we" >关于我们</a></li>
+<li class="nev"><a href="#center" >新闻中心</a></li>
+<li class="nev"><a href="#show">产品展示</a></li>
+<li class="nev"><a href="#exmaple"  >客户案例</a></li>
+<li class="nev"><a href="#relative">联系我们</a></li>
+<li class="nev"><a href="/main_login" >管理员登录</a></li>
+</ul>
+<!--------BANNER-------->
+<div class="banner">
+	<img src="./images/img/banner.png" alt="">
+</div>
+<!---------about us------------->
+<div class="aboutus" style="margin-top:200px;">	
+	<div class="tittle" id="we">关于我们</div>
+	<img src="./images/img/100.jpeg" alt="">
+  <div class="jieshao">公司介绍</div>
+	<div class="neirong">
+		<p> &nbsp; &nbsp; &nbsp; &nbsp;超涵物流有限责任公司于2021年10月19日在四川省成都市成立。本公司注册资本5000万元，总面积超13000平方米，现有员工近1500人。
+		公司对外设托管中心、库管中心、物流中心和客服中心共4大中心，内设综合部、托管部、财务部、库管部、物流部、安保部和信息部6个部门。</p>
+		
+	</div>
+	<div class="more">more</div>
+</div>	
+
+
+<!------------产品展示------------>
+<div class="show" id="show">
+	<div class="tittle" style="color: #000">产品介绍</div>
+	<div class="chanpinphoto">
+	<img src="./images/img/产品01.jpg" alt="">
+	<img src="./images/img/产品02.jpg" alt="">
+	<img src="./images/img/产品03.jpg" alt="">
+	<img src="./images/img/产品04.png" alt="" >
+	</div>
+	<div class="chaxun">点击查询</div>
+</div>
+<!--直接复制粘贴新闻中心-->
+<!---------新闻中心------------->
+<div class="news" id="center">
+	<div class="tittle">新闻中心</div>
+	<div class="newsbox">
+	  <div class="littlebox" style="margin-right: 19px">
+			<div class="left">
+				<img src="./images/img/lenglian.jpeg" alt="" width=236px height=211px>
+<p>冷链物流更好助力经济循环<span>    &nbsp; &nbsp;日前，国务院办公厅印发了《“十四五”冷链物流发展规划》。作为我国冷链物流领域第一份五年规划，《规划》首次从构建新发展格局的战略层面，有重要“里程碑”意义</span></p>
+				
+		  </div>
+			<div class="right" >
+			<a href="https://baijiahao.baidu.com/s?id=1719359063800415748&wfr=spider&for=pc">+</a></div>
+		</div>
+		<div class="littlebox">
+			<div class="left">
+				<img src="./images/img/canada.jpeg" alt="" width=236px height=211px>
+<p>国际物流加拿大海运专线<span>    &nbsp; &nbsp;中加之间的运输方式已经很成熟了。首先，物流公司会在国内的集运地将货物集中分拣，按类型将货物进行包装，再将货物运送至海关，经过海关，配合完成清关后，再将加拿大快递进行派送。</span></p>
+				
+		  </div>
+			<div class="right">				<a href="https://baijiahao.baidu.com/s?id=1719358838048857037&wfr=spider&for=pc">+
+				</a>
+			</div>
+		</div>
+		<div class="littlebox" style="margin-right: 19px">
+			<div class="left">
+				<img src="./images/img/gongyinglian.jpg" alt="" width=236px height=211px>
+<p>多措并举保障供应链畅通<span>    &nbsp; &nbsp;交通运输部表示目前我国已编印《船舶船员新冠肺炎疫情防控操作指南》，更新至第八版通过国际海事组织向全球共享。海事部门建立重点物资水路运输“绿色通道”，保障国际物流供应链畅通和群众生活稳定。</span></p>
+				
+		  </div>
+			<div class="right">				<a href="http://news.cctv.com/2021/12/17/ARTI501QIcauzEXv8OKRGn3k211217.shtml">+
+				</a>
+			</div>
+		</div>
+		<div class="littlebox"   >
+			<div class="left">
+				<img src="./images/img/zhanlanhui.jpg" alt="" width=236px height=211px>
+<p>2022广州物流展览会<span>    &nbsp; &nbsp;“2022中国国际智能物流、仓储设备及物流信息化展览会”简称“TTE”将于2022年8月17-19日在广州琶洲-保利世贸博览馆隆重举行，是华南地区智慧物流、物流信息化及仓储设备最具规模的国际展会。</span></p>
+				
+		  </div>
+			<div class="right">				<a href="https://www.163.com/dy/article/GRB3SCJU0552RXRP.html">+
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!---------客户案例---------->
+<div class="anlibox">
+	<div class="tittle" id="exmaple">客户案例</div>
+	<ul class="photobox">
+		<li><img src="./images/img/图1.png" alt=""></li>
+		<li><img src="./images/img/图2.png" alt=""></li>
+		<li><img src="./images/img/图3.png" alt=""></li>
+		<li><img src="./images/img/图4.png" alt=""></li>
+		<li><img src="./images/img/图5.png" alt=""></li>
+		<li><img src="./images/img/图6.png" alt=""></li>
+		<li><img src="./images/img/图7.png" alt=""></li>
+		<li><img src="./images/img/图8.png" alt=""></li>
+	</ul>
+</div>
+<!--------------联系我们-------------------->
+<div class="callme" id="relative">
+	<div class="tittle">联系我们</div>	
+	     <div class="callmebox">
+			<div>
+				<img src="./images/img/地址.png" alt="">
+				<p>ADRESS</p>
+				<span>地址：四川省成都市龙泉驿区</span>
+			</div>
+			<div>
+				<img src="./images/img/电话.png" alt="">
+				<p>TELL</p>
+				<span>电话：40068090</span>
+			</div>
+			<div>
+				<img src="./images/img/信息.png" alt="">
+				<p>MESSAGE</p>
+				<span>16927909080@163.com</span>
+			</div>
+	     </div>
+</div>
+<!------------底部----------->
+<div class="bottom">
+	<p></p>
+	<span>版权所有|四川超涵物流有限公司</span>
+</div>
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
