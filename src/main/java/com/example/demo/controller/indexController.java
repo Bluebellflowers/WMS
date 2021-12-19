@@ -8,6 +8,6 @@ public class indexController {
     //主页面入口
     @GetMapping("/")
     public String register() {
-        return "main_login";
+        return "web_finished";
     }
 }
